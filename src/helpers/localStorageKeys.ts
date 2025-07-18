@@ -1,0 +1,6 @@
+
+export const LOCAL_STORAGE_KEYS = {
+  ADMIN_TOKEN: "ADMIN_TOKEN",
+  LANGUAGE: "LANGUAGE",
+  THEME: "THEME",
+} as const;
