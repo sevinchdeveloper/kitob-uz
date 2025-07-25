@@ -1,5 +1,9 @@
+import Navbar from "@/layouts/Navbar";
+
 export default function Landing() {
   return (
-    <div> Landing </div>
+    <div> 
+      <Navbar/>
+    </div>
   )
 }
