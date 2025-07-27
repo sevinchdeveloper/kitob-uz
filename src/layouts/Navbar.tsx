@@ -1,6 +1,5 @@
 import React from "react";
 import LanguageSwitcher from "@/layouts/LanguageSwitcher";
-import ContainerLayout from "@/layouts/ContainerLayout";
 import { Link } from "react-router-dom";
 import LogoImage from "./../assets/images/Logo.svg";
 import { Button, Input } from 'antd';
@@ -22,9 +21,8 @@ const Navbar: React.FC = () => {
     }, [isDark]);
 
     return (
-        <ContainerLayout>
             <nav>
-                <div className="flex items-end justify-between gap-6 pt-3 pb-2 shadow-2xs">
+                <div className="flex items-end justify-between gap-6 pt-2 pb-2 shadow-2xs">
                     <Link to="/">
                         <img src={LogoImage} alt="Logo" className="h-11 w-auto mb-[13px]" />
                     </Link>
@@ -109,7 +107,6 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
             </nav>
-        </ContainerLayout>
     )
 }
 

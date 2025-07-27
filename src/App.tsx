@@ -7,6 +7,7 @@ import { LOCAL_STORAGE_KEYS } from "./helpers/localStorageKeys";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import { publicRoutes, privateRoutes } from "./routes/Routes";
 import { getToken } from "./helpers/token-storage";
+import ContainerLayout from "./layouts/ContainerLayout";
 
 const renderRoutes = (routes: RouteConfig[], role: string | null): React.ReactNode[] => {
   return routes
@@ -38,19 +39,19 @@ const renderRoutes = (routes: RouteConfig[], role: string | null): React.ReactNo
 const AppRouter = () => {
   const { token } = useContext(DataContext);
   const role = "ADMIN";
-  
+
   const activeRoutes = token || getToken(LOCAL_STORAGE_KEYS.ADMIN_TOKEN) ? [...privateRoutes, ...publicRoutes] : publicRoutes;
 
   const routes = createRoutesFromElements(renderRoutes(activeRoutes, role));
   const router = createBrowserRouter(routes);
 
   return (
-    <>
+    <ContainerLayout>
       <ToastContainer />
       <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>
-    </>
+    </ContainerLayout>
   );
 };
 
