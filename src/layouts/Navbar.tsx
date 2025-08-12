@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     }, [isDark]);
 
     return (
-            <nav>
+            <nav className="container">
                 <div className="flex items-end justify-between gap-6 pt-2 pb-2 shadow-2xs">
                     <Link to="/">
                         <img src={LogoImage} alt="Logo" className="h-11 w-auto mb-[13px]" />
@@ -46,7 +46,6 @@ const Navbar: React.FC = () => {
                         <LanguageSwitcher />
                         <div className="relative w-11 h-4">
                             <div className="w-full h-full rounded-full bg-gray-300 cursor-pointer" />
-
                             <button
                                 onClick={() => setIsDark(!isDark)}
                                 className="w-7 h-7 bg-blue-950 cursor-pointer text-white rounded-full absolute left-0 top-1/2 -translate-y-1/2 transition-all duration-300"

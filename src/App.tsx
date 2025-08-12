@@ -7,7 +7,6 @@ import { LOCAL_STORAGE_KEYS } from "./helpers/localStorageKeys";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import { publicRoutes, privateRoutes } from "./routes/Routes";
 import { getToken } from "./helpers/token-storage";
-import ContainerLayout from "./layouts/ContainerLayout";
 
 const renderRoutes = (routes: RouteConfig[], role: string | null): React.ReactNode[] => {
   return routes
@@ -46,13 +45,17 @@ const AppRouter = () => {
   const router = createBrowserRouter(routes);
 
   return (
-    <ContainerLayout>
+    <>
       <ToastContainer />
       <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>
-    </ContainerLayout>
+    </>
   );
 };
 
 export default AppRouter;
+
+{/* <InstagramOutlined /> */}
+{/* <FaFacebookF /> */}
+{/* <FaTelegramPlane /> */}
